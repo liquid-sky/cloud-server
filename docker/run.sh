@@ -6,7 +6,7 @@ CONFIG="/config/cloud.yaml"
 BACKUP_CONFIG="/config/backup-config.yaml"
 
 function compose {
-  /usr/bin/docker-compose -f $CONFIG $@
+  /usr/local/bin/docker-compose -f $CONFIG $@
 }
 
 function is_running {
