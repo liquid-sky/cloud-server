@@ -1,7 +1,7 @@
 #!/bin/bash
 
 VOLUME="cloud-server-config"
-IMAGE="janstenpickle/cloud-server"
+IMAGE="neverhood/cloud-server"
 
 function volume_exists {
   if [ "x$(docker ps -a | grep ${VOLUME} | wc -l)" != "x0" ]; then
@@ -29,7 +29,7 @@ function cmd {
 }
 
 function update {
-  curl https://raw.githubusercontent.com/janstenpickle/cloud-server/master/install.sh | bash
+  curl https://raw.githubusercontent.com/liquid-sky/cloud-server/master/install.sh | bash
   docker pull $IMAGE
   remove_config_volume
 }
