@@ -20,7 +20,7 @@ services:
 
   <% if @config.has_key?('nextcloud') %>
   nextcloud:
-    image: neverhood/nextcloud
+    image: neverhood/nextcloud 
     depends_on:
     - mysql
     volumes:
@@ -39,8 +39,8 @@ services:
     image: jwilder/nginx-proxy
     container_name: nginx-proxy
     ports:
-    - 80:80
-    - 443:443
+    - 0.0.0.0:80:80
+    - 0.0.0.0:443:443
     environment:
       DEFAULT_HOST: <%= @config['nextcloud']['virtual_host'] %>
     volumes:
